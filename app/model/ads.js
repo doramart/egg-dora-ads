@@ -8,7 +8,6 @@ module.exports = app => {
     var Schema = mongoose.Schema;
     var moment = require('moment')
 
-    require('./adsItems');
     var AdsSchema = new Schema({
         _id: {
             type: String,
@@ -37,7 +36,7 @@ module.exports = app => {
         },
         items: [{
             type: String,
-            ref: 'AdsItems'
+            ref: 'AdsItem'
         }], // 广告列表id
         comments: String, // 描述
     });

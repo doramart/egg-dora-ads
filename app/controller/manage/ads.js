@@ -132,9 +132,6 @@ let AdsController = {
 
             ctx.validate(adsRule(ctx), formObj);
 
-
-
-
             let itemIdArr = [],
                 adsItems = fields.items;
             if (adsItems.length > 0) {
@@ -185,7 +182,7 @@ let AdsController = {
                             _id: currentId
                         }
                     })
-                    if (!_.isEmpty(targetAd)) {
+                    if (!_.isEmpty(targetAd) && !_.isEmpty(targetAd.items)) {
                         await ctx.service.adsItem.removes(ctx, (targetAd.items).join(','))
                     }
 

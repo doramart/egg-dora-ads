@@ -7,7 +7,7 @@ module.exports = app => {
     var shortid = require('shortid');
     var Schema = mongoose.Schema;
 
-    var AdsItemsSchema = new Schema({
+    var AdsItemSchema = new Schema({
         _id: {
             type: String,
 
@@ -37,15 +37,15 @@ module.exports = app => {
 
 
 
-    AdsItemsSchema.set('toJSON', {
+    AdsItemSchema.set('toJSON', {
         getters: true,
         virtuals: true
     });
-    AdsItemsSchema.set('toObject', {
+    AdsItemSchema.set('toObject', {
         getters: true,
         virtuals: true
     });
 
-    return mongoose.model("AdsItems", AdsItemsSchema, 'adsitems');
+    return mongoose.model("AdsItem", AdsItemSchema, 'adsitems');
 
 }
