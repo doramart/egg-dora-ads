@@ -1,6 +1,6 @@
 {
   "name": "egg-dora-ads",
-  "version": "1.0.3",
+  "version": "1.0.7",
   "description": "ads",
   "eggPlugin": {
     "name": "doraAds"
@@ -52,7 +52,7 @@
     "url": "git+https://github.com/doramart/egg-dora-ads.git"
   },
   "bugs": {
-    "url": "https://github.com/doramart/egg/issues"
+    "url": "https://github.com/doramart/egg-dora-ads/issues"
   },
   "homepage": "https://github.com/doramart/egg-dora-ads#readme",
   "author": "doramart",
