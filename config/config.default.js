@@ -17,7 +17,7 @@ exports.doraAds = {
     isindex: 0, // 是否需要前台访问，1：需要，0：不需要,入口地址:'/ext/devteam/index/index'
     version: pkgInfo.version, // 版本号
     iconName: 'icon_shakehands_fill', // 主菜单图标名称
-    adminUrl: 'https://cdn.html-js.cn/cms/plugins/static/admin/ads/js/app.js',
+    adminUrl: '/ads/js/app.js',
     adminApi: [{
         url: 'ads/getList',
         method: 'get',
@@ -52,13 +52,12 @@ exports.doraAds = {
     }],
     initData: '', // 初始化数据脚本
     pluginsConfig: ` 
-    exports.doraAds = {\n
-        enable: true,\n
-        \n
+    module.exports = {\n
+        enable: true,\n        package: 'egg-dora-ads',    
     };\n
     `, // 插入到 plugins.js 中的配置
     defaultConfig: `
-    adsRouter:{\n
+    module.exports = {\n
         match: [ctx => ctx.path.startsWith('/manage/ads'), ctx => ctx.path.startsWith('/api/ads')],\n
     },\n
     `, // 插入到 config.default.js 中的配置

@@ -2,7 +2,7 @@
  * @Author: doramart 
  * @Date: 2019-06-24 13:20:49 
  * @Last Modified by: doramart
- * @Last Modified time: 2019-09-26 09:17:15
+ * @Last Modified time: 2019-11-13 21:39:01
  */
 
 'use strict';
@@ -21,7 +21,7 @@ const {
 } = require(path.join(process.cwd(), 'app/service/general'));
 
 
-class AdsService extends Service {
+class AdsItemService extends Service {
 
     async find(payload, {
         query = {},
@@ -30,7 +30,7 @@ class AdsService extends Service {
         files = null
     } = {}) {
 
-        let listdata = _list(this.ctx.model.Ads, payload, {
+        let listdata = _list(this.ctx.model.AdsItem, payload, {
             query: query,
             searchKeys: searchKeys,
             populate: populate,
@@ -42,30 +42,30 @@ class AdsService extends Service {
 
 
     async count(params = {}) {
-        return _count(this.ctx.model.Ads, params);
+        return _count(this.ctx.model.AdsItem, params);
     }
 
     async create(payload) {
-        return _create(this.ctx.model.Ads, payload);
+        return _create(this.ctx.model.AdsItem, payload);
     }
 
     async removes(res, values, key = '_id') {
-        return _removes(res, this.ctx.model.Ads, values, key);
+        return _removes(res, this.ctx.model.AdsItem, values, key);
     }
 
     async safeDelete(res, values) {
-        return _safeDelete(res, this.ctx.model.Ads, values);
+        return _safeDelete(res, this.ctx.model.AdsItem, values);
     }
 
     async update(res, _id, payload) {
-        return _update(res, this.ctx.model.Ads, _id, payload);
+        return _update(res, this.ctx.model.AdsItem, _id, payload);
     }
 
     async item(res, params = {}) {
-        return _item(res, this.ctx.model.Ads, params)
+        return _item(res, this.ctx.model.AdsItem, params)
     }
 
 
 }
 
-module.exports = AdsService;
+module.exports = AdsItemService;
